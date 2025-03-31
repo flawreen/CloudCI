@@ -16,7 +16,7 @@ async function run() {
         await client.connect();
         // Send a ping to confirm a successful connection
         await client.db(process.env.DB_NAME).command({ ping: 1 });
-        const collection = client.db(process.env.DB_NAME).collection("users");
+        const collection = client.db(process.env.DB_NAME).collection("listingsAndReviews");
         const res = await collection.findOne({name: 'Ned Stark'});
         console.log(res);
         console.log("Pinged your deployment. You successfully connected to MongoDB!");
