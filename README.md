@@ -1,12 +1,5 @@
 # 🚀 API Unit Tests with Continuous Integration Pipeline
-#### Software Systems Testing project 🚀
-## ✅ Features
-- 🔥 API: Express
-- 🔥 Unit tests: Jest & Supertest
-- 🔥 Azure Database: MongoDB Atlas
-- 🔥 CI: GitHub Actions
-- 🔥 API Requests: Postman
-- 🔥 Nice to have: Swagger
+#### 🔥 Software Systems Testing project 🚀
 ## 🎨 State of the art
 1. Testarea unitara[^1]
    - reprezinta testarea unei bucati mici de cod, cum ar fi o functie
