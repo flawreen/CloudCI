@@ -24,6 +24,9 @@
 - Stocare: SSD 512GB
 ## 🖥️ Configuratie Software
 - SO: Fedora Linux 41 in dual boot
+   - Shell: Z Shell
+   - Terminal: Alacritty
+   - Package manager: dnf
 - IDE: JetBrains WebStorm 2024.3.5
 - Browser: Brave
 - LLM: ChatGPT, Deepseek
