@@ -15,7 +15,7 @@
    - ne ajuta sa ne asiguram ca payload-ul este scris corect, de exemplu: trimitem un POST request catre server, iar in payload am scris city in loc de City care este numele cunoscut de baza de date
 3. Integrarea continua [^3]
    - este o tehnica folosita in dezvoltarea software prin care codul este incarcat intr-un repository abia dupa ce a fost rulat cu succes un build si dupa ce a trecut de o serie de teste, garantand calitatea codului si minimizand numarul de bug-uri din aplicatie
-## 📦 Servicii si resurse
+## 📦 ☁️ Servicii si resurse
 1. Express[^4]: framework web pe care il voi folosi pentru a face request-urile HTTP si a configura rutele
 2. Jest[^5]: framework de testare pentru JS, pe care il voi folosi pentru testele unitare
 3. Supertest[^6]: framework de testare pentru request-uri HTTP, care ne scuteste de necesitatea de a avea un server pornit cand ruleaza testele
@@ -24,7 +24,16 @@
 6. GitHub Actions[^8]: platforma care ne ajuta sa automatizam integrarea continua a aplicatiei
 7. Swagger[^9]: unealta care ne ajuta sa vizualizam in detaliu toate endpoint-urile unui API si ne permite si sa testam manual
 8. Postman[^10]: unealta prin care putem face request-uri si vedea apoi response-ul pentru testarea manuala a API-ului
-
+## 🛠️ Configuratie Hardware
+- CPU: Intel Core i5-1135G7
+- GPU: Intel TigerLake-LP GT2
+- RAM: 16 GB
+- Stocare: SSD 512GB
+## 🖥️ Configuratie Software
+- SO: Fedora Linux 41 in dual boot
+- IDE: JetBrains WebStorm 2024.3.5
+- Browser: Brave
+- LLM: ChatGPT, Deepseek
 
 
 
