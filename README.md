@@ -13,7 +13,7 @@
 2. Jest[^5]: framework de testare pentru JS, pe care il voi folosi pentru testele unitare
 3. Supertest[^6]: framework de testare pentru request-uri HTTP, care ne scuteste de necesitatea de a avea un server pornit cand ruleaza testele
 4. MongoDB Atlas[^11]: platforma cloud prin care accesez o baza de date non-relationala deja populata[^7] si ma conectez la aceasta printr-un server hostat pe Azure
-5. dotenv[^12]: un secret manager pe care il folosesc sa pastrez secret connection string-ul pentru baza de date intr-un fisier .env care nu va fi incarcat vreodata in Git
+5. dotenv[^12]: un secret manager pe care il folosesc sa pastrez secret connection string-ul pentru baza de date intr-un fisier .env
 6. GitHub Actions[^8]: platforma care ne ajuta sa automatizam integrarea continua a aplicatiei
 7. Swagger[^9]: unealta care ne ajuta sa vizualizam in detaliu toate endpoint-urile unui API si ne permite si sa testam manual
 8. Postman[^10]: unealta prin care putem face request-uri si vedea apoi response-ul pentru testarea manuala a API-ului
@@ -24,13 +24,9 @@
 - Stocare: SSD 512GB
 ## 🖥️ Configuratie Software
 - SO: Fedora Linux 41 in dual boot
-   - Shell: Z Shell
-   - Terminal: Alacritty
-   - Package manager: dnf
 - IDE: JetBrains WebStorm 2024.3.5
-- Browser: Brave
-- LLM: ChatGPT, Deepseek
-
+## Workflow integrare continua
+![pipeline_ci](https://github.com/user-attachments/assets/19809331-faa6-405f-832f-212f65e5af6a)
 
 
 
