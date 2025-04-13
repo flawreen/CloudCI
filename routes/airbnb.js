@@ -1,5 +1,7 @@
 import express from 'express';
 import db from '../db/connection.js';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // TODO query de pe airbnb care ia proprietatile cu media de la review_scores peste 8.5 pentru "family-safe"
 //  si peste 6 pentru "friends trip"
@@ -13,11 +15,12 @@ const router = express.Router();
 router.get('/ping', (req, res) => {
     res.send('Pong from Airbnb router!');
 });
-// router.get('/:id', async function (req, res) {
-//     const qry = await collection.findOne({_id: req.params.id.toString()});
-//     console.log(qry);
-//     res.send(qry);
-// });
+router.get('/:id', async function (req, res) {
+    const collection = await db.collection(process.env.COLLECTION_NAME);
+    const qry = await collection.findOne({_id: req.params.id.toString()});
+    console.log(qry);
+    res.send(qry);
+});
 
 
 export default router;
