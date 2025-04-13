@@ -1,15 +1,19 @@
 {
-  "name": "CloudCI",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "private": true,
-  "dependencies": {
-    "dotenv": "^16.4.7",
-    "express": "^5.1.0",
-    "mongodb": "^6.15.0"
-  }
+    "name": "cloudci",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "type": "module",
+    "dependencies": {
+        "cookie-parser": "~1.4.4",
+        "debug": "~2.6.9",
+        "dotenv": "^16.4.7",
+        "express": "5.0.0",
+        "http-errors": "~1.6.3",
+        "jade": "~1.11.0",
+        "mongodb": "^6.15.0",
+        "morgan": "~1.9.1"
+    }
 }
