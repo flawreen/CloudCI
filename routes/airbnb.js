@@ -1,34 +1,27 @@
 import express from 'express';
-import db from '../db/connection.js';
+import { connectToDb } from '../db/connection.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
 
-// TODO query de pe airbnb care ia proprietatile cu media de la review_scores peste 8.5 pentru "family-safe"
-//  si peste 6 pentru "friends trip"
-
-// TODO vad daca de la location-coordinates e in raza de {x} km
-
-// TODO query sa ia proprietati cu valabilitate in urmatoarea luna x zile
-
-
 const router = express.Router();
-
-async function getCollection() {
-    return db.collection(process.env.COLLECTION_NAME);
-}
 
 router.get('/ping', (req, res) => {
     res.send('Pong from Airbnb router!');
 });
 
 router.get('/id/:id', async (req, res) => {
+    const db = await connectToDb();
     const collection = await db.collection(process.env.COLLECTION_NAME);
     const qry = await collection.findOne({_id: req.params.id.toString()});
-    res.send(qry);
+
+    if (!qry) {
+        res.sendStatus(404);
+    } else res.send(qry);
 });
 
-router.get('/bookings-top10/:location', async (req, res) => {
+router.get('/best-by-location/:location', async (req, res) => {
+    const db = await connectToDb();
     const collection = await db.collection(process.env.COLLECTION_NAME);
     // convert %20 into spaces
     req.params.location.replaceAll('%20', ' ');
@@ -72,6 +65,20 @@ router.get('/bookings-top10/:location', async (req, res) => {
             break;
         }
     }
+
+    res.send(top10);
+});
+
+router.get('/with-facility/:facility', async (req, res) => {
+    const db = await connectToDb();
+    const collection = await db.collection(process.env.COLLECTION_NAME);
+    req.params.facility.replaceAll('%20', ' ');
+    let top10 = await collection
+        .find(
+        {'amenities': req.params.facility}
+        )
+        .limit(10)
+        .toArray();
 
     res.send(top10);
 });

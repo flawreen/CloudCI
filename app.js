@@ -17,9 +17,4 @@ app.use(cookieParser());
 // routes config
 app.use('/airbnb', airbnbRouter);
 
-
-app.listen(process.env.PORT, () => {
-    console.log(`Server listening on port ${process.env.PORT}`);
-})
-
 export default app;

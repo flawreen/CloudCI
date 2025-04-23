@@ -1,22 +1,23 @@
-import { MongoClient, ServerApiVersion } from 'mongodb';
+import {MongoClient, ServerApiVersion} from 'mongodb';
 import dotenv from 'dotenv';
+
 dotenv.config();
 const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri, {
     serverApi: {
-        version: ServerApiVersion.v1,
-        strict: true,
-        deprecationErrors: true,
+        version: ServerApiVersion.v1, strict: true, deprecationErrors: true,
     }
 });
 
-try {
-    await client.connect();
-} catch (err) {
-    console.error(err);
-} finally {
+export const connectToDb = async () => {
+    try {
+        await client.connect();
+        return client.db(process.env.DB_NAME);
+    } catch (err) {
+        console.error(err);
+    } finally {
+    }
 }
 
-let db = client.db(process.env.DB_NAME);
 
-export default db;
+// export default db;
