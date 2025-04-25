@@ -9,6 +9,10 @@ const client = new MongoClient(uri, {
     }
 });
 
+export const closeDbConnection = async () => {
+    await client.close();
+}
+
 export const connectToDb = async () => {
     try {
         await client.connect();
@@ -18,6 +22,7 @@ export const connectToDb = async () => {
     } finally {
     }
 }
+
 
 
 // export default db;

@@ -1,5 +1,5 @@
 import express from 'express';
-import { connectToDb } from '../db/connection.js';
+import {connectToDb} from '../db/connection.js';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -52,14 +52,12 @@ router.get('/best-by-location/:location', async (req, res) => {
                 }
             } else continue;
 
-            top10.push(
-                {
-                    _id: booking._id,
-                    location: req.params.location,
-                    recommendation: recommendation,
-                    avg_score: avg_score.toFixed(2)
-                }
-            );
+            top10.push({
+                _id: booking._id,
+                location: req.params.location,
+                recommendation: recommendation,
+                avg_score: avg_score.toFixed(2)
+            });
         }
         if (top10.length >= 10) {
             break;
@@ -74,13 +72,13 @@ router.get('/with-facility/:facility', async (req, res) => {
     const collection = await db.collection(process.env.COLLECTION_NAME);
     req.params.facility.replaceAll('%20', ' ');
     let top10 = await collection
-        .find(
-        {'amenities': req.params.facility}
-        )
+        .find({'amenities': req.params.facility})
         .limit(10)
         .toArray();
 
-    res.send(top10);
+    if (top10.length < 1) {
+        res.sendStatus(404);
+    } else res.send(top10);
 });
 
 
