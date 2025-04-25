@@ -11,7 +11,22 @@ router.get('/ping', (req, res) => {
 });
 
 /**
- * Finds a booking by id
+ * @swagger
+ * /airbnb/id/{id}:
+ *   get:
+ *     description: Finds a booking by id
+ *     parameters:
+ *       - name: id
+ *         description: booking id to find
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
+ *         x-example:
+ *           1003530
+ *     responses:
+ *       200:
+ *         description: finds booking with requested id
  */
 router.get('/id/:id', async (req, res) => {
     const db = await connectToDb();
@@ -24,9 +39,22 @@ router.get('/id/:id', async (req, res) => {
 });
 
 /**
- *  Finds at most 10 bookings in the requested city having the review scores average above:
- -> 6 to be recommended for a friends trip
- -> 9 to be recommended for a family trip
+ * @swagger
+ * /airbnb/best-by-location/{location}:
+ *   get:
+ *     description: Finds at most 10 bookings in the requested city having the review scores average above:-> 6 to be recommended for a friends trip, -> 9 to be recommended for a family trip
+ *     parameters:
+ *       - name: location
+ *         description: city to search bookings in
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
+ *         x-example:
+ *           New York
+ *     responses:
+ *       200:
+ *         description: a json array of objects with _id representing the booking's id, location, recommendation, avg_score
  */
 router.get('/best-by-location/:location', async (req, res) => {
     const db = await connectToDb();
@@ -77,7 +105,22 @@ router.get('/best-by-location/:location', async (req, res) => {
 });
 
 /**
- * Finds at most 10 bookings with the requested facility
+ * @swagger
+ * /airbnb/with-facility/{facility}:
+ *   get:
+ *     description: Finds at most 10 bookings with the requested facility
+ *     parameters:
+ *       - name: facility
+ *         description: facility you need in your booking
+ *         in: path
+ *         required: true
+ *         schema:
+ *           type: string
+ *         x-example:
+ *           TV
+ *     responses:
+ *       200:
+ *         description: a json array of bookings with the requested facility
  */
 router.get('/with-facility/:facility', async (req, res) => {
     const db = await connectToDb();
@@ -85,6 +128,7 @@ router.get('/with-facility/:facility', async (req, res) => {
     req.params.facility.replaceAll('%20', ' ');
     let top10 = await collection
         .find({'amenities': req.params.facility})
+        .project({_id: 1, amenities: 1})
         .limit(10)
         .toArray();
 
