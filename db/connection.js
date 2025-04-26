@@ -10,7 +10,11 @@ const client = new MongoClient(uri, {
 });
 
 export const closeDbConnection = async () => {
-    await client.close();
+    try {
+        await client.close();
+    } catch (error) {
+        console.error('Error closing MongoDB connection:', error.message);
+    }
 }
 
 export const connectToDb = async () => {
