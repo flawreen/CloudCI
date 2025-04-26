@@ -1,7 +1,11 @@
 import app from '../app.js';
 import request from 'supertest';
-import {describe, expect, test, it, afterAll} from '@jest/globals';
-import {closeDbConnection} from "../db/connection.js";
+import {describe, expect, test, it, afterAll, beforeAll} from '@jest/globals';
+import {closeDbConnection, connectToDb} from "../db/connection.js";
+
+beforeAll(async () => {
+    await connectToDb();
+})
 
 describe('GET /airbnb/id', () => {
     it('return 200 and find the correct id', async () => {
