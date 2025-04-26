@@ -3,11 +3,11 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri, {
-    serverApi: {
-        version: ServerApiVersion.v1, strict: true, deprecationErrors: true,
-    }
-});
+// const client = new MongoClient(uri, {
+//     serverApi: {
+//         version: ServerApiVersion.v1, strict: true, deprecationErrors: true,
+//     }
+// });
 
 export const closeDbConnection = async () => {
     try {
@@ -17,8 +17,17 @@ export const closeDbConnection = async () => {
     }
 }
 
+let client;
 export const connectToDb = async () => {
     try {
+        if (client) {
+            return client.db(process.env.DB_NAME);
+        }
+        client = new MongoClient(uri, {
+            serverApi: {
+                version: ServerApiVersion.v1, strict: true, deprecationErrors: true,
+            }
+        });
         await client.connect();
         return client.db(process.env.DB_NAME);
     } catch (err) {

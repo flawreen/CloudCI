@@ -1,9 +1,10 @@
 import app from '../app.js';
 import request from 'supertest';
-import {describe, expect, test, it, afterAll, beforeAll} from '@jest/globals';
+import {describe, expect, test, it, afterAll, beforeAll, jest} from '@jest/globals';
 import {closeDbConnection, connectToDb} from "../db/connection.js";
 
 beforeAll(async () => {
+    jest.setTimeout(15000);
     await connectToDb();
 })
 
