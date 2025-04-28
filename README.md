@@ -25,8 +25,9 @@
 ## 🖥️ Configuratie Software
 - SO: Fedora Linux 41 in dual boot
 - IDE: JetBrains WebStorm 2024.3.5
-## Workflow integrare continua
-![pipeline_ci](https://github.com/user-attachments/assets/19809331-faa6-405f-832f-212f65e5af6a)
+## Integrare continua
+![flow-ci drawio](https://github.com/user-attachments/assets/a169e56f-c8c9-4a3f-b387-a297f9574cfc)
+Integrarea continua cu GitHub Actions
 
 
 
