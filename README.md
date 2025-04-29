@@ -25,9 +25,35 @@
 ## 🖥️ Configuratie Software
 - SO: Fedora Linux 41 in dual boot
 - IDE: JetBrains WebStorm 2024.3.5
+
+## Baza de date
+Baza de date non-relationala pre-populata de la MongoDB Atlas, pe modelul Airbnb: https://www.mongodb.com/docs/atlas/sample-data/sample-airbnb/
+
+## Testarea unitara
+Au fost testate unitar 3 endpoint-uri:
+1. GET /airbnb/id
+2. GET /airbnb/with-facility
+3. GET /airbnb/best-by-location
+
+#### Rularea testelor din command-line
+[![TSS Teste din command-line](https://img.youtube.com/vi/v-UOShSeid0/0.jpg)](https://www.youtube.com/watch?v=v-UOShSeid0)
+#### Rularea testelor din IDE
+[![TSS Teste IDE](https://img.youtube.com/vi/TVB_Luna6gM/0.jpg)](https://www.youtube.com/watch?v=TVB_Luna6gM)
+
+## Testarea manuala
+API-ul poate fi testat si manual, cu ajutorul Postman si Swagger:
+1. Postman
+   
+   [![TSS Postman](https://img.youtube.com/vi/4ih5s27cU3Q/0.jpg)](https://www.youtube.com/watch?v=4ih5s27cU3Q)
+2. Swagger
+
+   [![TSS Swagger](https://img.youtube.com/vi/n74kC3gedZs/0.jpg)](https://www.youtube.com/watch?v=n74kC3gedZs)
+   
 ## Integrare continua
 ![flow-ci drawio](https://github.com/user-attachments/assets/a169e56f-c8c9-4a3f-b387-a297f9574cfc)
 Integrarea continua cu GitHub Actions
+
+[![TSS GitHub Actions](https://img.youtube.com/vi/XfY3INpJAWI/0.jpg)](https://www.youtube.com/watch?v=XfY3INpJAWI)
 
 
 
