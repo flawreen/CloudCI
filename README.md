@@ -56,6 +56,8 @@ Integrarea continua cu GitHub Actions
 [![TSS GitHub Actions](https://img.youtube.com/vi/XfY3INpJAWI/0.jpg)](https://www.youtube.com/watch?v=XfY3INpJAWI)
 
 
+[Raport despre folosirea Deepseek](RaportAI.md)
+
 
 [^1]: https://aws.amazon.com/what-is/unit-testing/
 [^2]: https://www.postman.com/api-platform/api-testing/
