@@ -53,6 +53,20 @@ API-ul poate fi testat si manual, cu ajutorul Postman si Swagger:
 ![flow-ci drawio](https://github.com/user-attachments/assets/a169e56f-c8c9-4a3f-b387-a297f9574cfc)
 Integrarea continua cu GitHub Actions
 
+### Script-ul de integrare continua
+● Rulează pe o mașină virtuală cu Ubuntu
+
+● Instaleaza pachetele din npm cu ‘npm ci’, mai eficienta decat ‘npm install’ in acest context
+
+● Rulează build-ul programului cu npm run build
+
+● Rulează testele unitare cu npm test
+
+● Variabilele necesare pentru conectarea la baza de date sunt stocate ca secrete in GitHub Actions
+
+![image](https://github.com/user-attachments/assets/b48351d1-4f3d-4899-81ba-47bec863dfb5)
+
+
 [![TSS GitHub Actions](https://img.youtube.com/vi/XfY3INpJAWI/0.jpg)](https://www.youtube.com/watch?v=XfY3INpJAWI)
 
 
